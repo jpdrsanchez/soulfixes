@@ -29,11 +29,15 @@ export const GlobalStyles = createGlobalStyle`
     --blackTwo: #333;
     --grayOne: #828282;
     --grayTwo: #bdbdbd;
+    --grayThree: #dcd2cc;
     --purpleOne: #ebd7ff;
     --purpleTwo: #694b86;
     --orangeOne: #ffdccc;
     --orangeTwo: #b64f4f;
+    --orangeThree: #ff9c55;
     --brown: #742929;
+    --greenOne: #cffcff;
+    --greenTwo: #63a2a6;
   }
 
   body {

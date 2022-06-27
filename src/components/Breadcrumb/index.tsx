@@ -14,13 +14,17 @@ interface BreadcrumbProps {
 
 const Breadcrumb = (props: BreadcrumbProps) => {
   return (
-    <S.Nav aria-label="breadcrumbs" variant={props.variant}>
+    <S.Nav
+      aria-label="breadcrumbs"
+      variant={props.variant}
+      totalItens={props.paths.length}
+    >
       <ol>
         {props.paths.map((path, index) => (
           <li
             key={uuid()}
             style={{
-              transform: `translateX(-${index * 40}px)`,
+              left: `-${index * 40}px`,
               zIndex: `${700 - index}`
             }}
           >

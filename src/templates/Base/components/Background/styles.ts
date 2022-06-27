@@ -68,7 +68,7 @@ export const Wrapper = styled.div<WrapperStyleProps>`
       top: 0;
       left: 0;
       height: 597px;
-      background: ${wrapperBackgrounds[variant].bodyBg.sm};
+      background: ${wrapperBackgrounds[variant].shadowBg.sm};
 
       @media (min-width: 768px) {
         background: ${wrapperBackgrounds[variant].shadowBg.md};

@@ -3,6 +3,7 @@ import { Variant } from 'templates/Base/components/Background/styles'
 
 interface NavProps {
   variant?: Variant
+  totalItens: number
 }
 
 interface Colors {
@@ -30,6 +31,15 @@ export const Nav = styled.nav<NavProps>`
 
   ol {
     display: flex;
+
+    @media (max-width: 575px) {
+      display: none;
+    }
+
+    @media (min-width: 576px) and (max-width: 991px) {
+      margin-left: 40px;
+      justify-content: center;
+    }
   }
 
   li {
