@@ -4,6 +4,7 @@ import { Variant } from 'templates/Base/components/Background/styles'
 interface NavProps {
   variant?: Variant
   totalItens: number
+  center?: boolean
 }
 
 interface Colors {
@@ -40,6 +41,13 @@ export const Nav = styled.nav<NavProps>`
       margin-left: 40px;
       justify-content: center;
     }
+
+    ${({ center = false }) =>
+      center &&
+      css`
+        margin-left: 40px;
+        justify-content: center;
+      `}
   }
 
   li {

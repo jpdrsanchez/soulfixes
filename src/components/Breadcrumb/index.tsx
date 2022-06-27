@@ -10,6 +10,7 @@ interface BreadcrumbProps {
     link: string
   }[]
   variant?: Variant
+  center?: boolean
 }
 
 const Breadcrumb = (props: BreadcrumbProps) => {
@@ -18,6 +19,7 @@ const Breadcrumb = (props: BreadcrumbProps) => {
       aria-label="breadcrumbs"
       variant={props.variant}
       totalItens={props.paths.length}
+      center={props.center}
     >
       <ol>
         {props.paths.map((path, index) => (

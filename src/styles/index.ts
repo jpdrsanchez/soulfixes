@@ -36,6 +36,7 @@ export const GlobalStyles = createGlobalStyle`
     --orangeTwo: #b64f4f;
     --orangeThree: #ff9c55;
     --brown: #742929;
+    --brownTwo: #602f2f;
     --greenOne: #cffcff;
     --greenTwo: #63a2a6;
   }
