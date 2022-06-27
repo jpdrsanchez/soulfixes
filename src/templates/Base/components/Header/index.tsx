@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import Menu from './components/Menu'
+import UserMenu from './components/UserMenu'
 import * as S from './styles'
 
 const Header = () => {
@@ -21,6 +22,7 @@ const Header = () => {
         </Link>
         <S.HeaderNav>
           <Menu />
+          <UserMenu />
         </S.HeaderNav>
       </S.HeaderContainer>
     </S.Header>

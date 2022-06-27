@@ -30,6 +30,7 @@ export const GlobalStyles = createGlobalStyle`
     --grayOne: #828282;
     --grayTwo: #bdbdbd;
     --grayThree: #dcd2cc;
+    --grayFour: #c4c4c4;
     --purpleOne: #ebd7ff;
     --purpleTwo: #694b86;
     --orangeOne: #ffdccc;

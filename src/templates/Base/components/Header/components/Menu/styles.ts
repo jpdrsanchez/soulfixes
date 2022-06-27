@@ -7,6 +7,7 @@ export const Menu = styled.ul`
 
   li {
     position: relative;
+    z-index: 980;
 
     &:hover {
       div {
@@ -20,7 +21,7 @@ export const Menu = styled.ul`
 
 export const Submenu = styled.div`
   position: absolute;
-  z-index: 970;
+  z-index: -1;
   width: max-content;
   padding-top: 50px;
   top: -10px;

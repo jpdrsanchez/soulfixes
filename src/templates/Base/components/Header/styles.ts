@@ -19,6 +19,10 @@ export const HeaderLogo = styled.a`
 `
 
 export const HeaderNav = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 32px;
+
   @media (max-width: 991px) {
     display: none;
   }
