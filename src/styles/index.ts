@@ -27,9 +27,17 @@ export const GlobalStyles = createGlobalStyle`
     --whiteTwo: #fff9f6;
     --blackOne: #000;
     --blackTwo: #333;
+    --grayOne: #828282;
+    --grayTwo: #bdbdbd;
+    --purpleOne: #ebd7ff;
+    --purpleTwo: #694b86;
+    --orangeOne: #ffdccc;
+    --orangeTwo: #b64f4f;
+    --brown: #742929;
   }
 
   body {
+    background: var(--whiteTwo);
     font-family: var(--text);
   }
 

@@ -10,15 +10,12 @@ import '@fontsource/stix-two-text/600.css'
 import '@fontsource/stix-two-text/700.css'
 
 import { GlobalStyles } from '../styles'
-import Base from '../templates/Base'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
-      <Base>
-        <Component {...pageProps} />
-      </Base>
+      <Component {...pageProps} />
     </>
   )
 }

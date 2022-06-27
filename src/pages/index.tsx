@@ -1,11 +1,14 @@
 import type { NextPage } from 'next'
+import Base from 'templates/Base'
 
-const Home: NextPage = () => {
+import Home from 'templates/Home'
+
+const HomePage: NextPage = () => {
   return (
-    <div>
-      <p>Teste</p>
-    </div>
+    <Base>
+      <Home />
+    </Base>
   )
 }
 
-export default Home
+export default HomePage
