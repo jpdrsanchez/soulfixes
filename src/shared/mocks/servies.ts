@@ -6,7 +6,8 @@ const services: ServiceCard[] = Array.from<ServiceCard>({ length: 8 }).fill({
   slug: 'chiropractic',
   categories: ['In person', 'Virtual'],
   price: '$62',
-  image: '/images/Services/service.jpg'
+  image: '/images/Services/service.jpg',
+  isTopService: true
 })
 
 export default services
