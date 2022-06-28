@@ -4,8 +4,11 @@ import Link from 'next/link'
 import Container from 'components/Container'
 import * as S from './styles'
 import { IoCheckmark } from 'react-icons/io5'
+import useLoginService from './useLoginService'
 
 const Login = () => {
+  const login = useLoginService({ loginType: 1 })
+
   return (
     <S.Login>
       <Container>
@@ -20,20 +23,27 @@ const Login = () => {
             />
           </S.LoginLogo>
           <h1>Login</h1>
-          <S.LoginForm>
+          <S.LoginForm onSubmit={login.handleSubmit(login.onSubmit)}>
             <label htmlFor="email" className="visually-hidden">
               E-mail
             </label>
-            <input type="text" name="email" id="email" placeholder="Email" />
+            <input
+              className={login.dirtyFields.email ? 'active' : ''}
+              type="text"
+              placeholder="Email"
+              {...login.register('email')}
+            />
+            <S.InputError>{login.errors.email?.message || ' '}</S.InputError>
             <label htmlFor="password" className="visually-hidden">
               Password
             </label>
             <input
+              className={login.dirtyFields.password ? 'active' : ''}
               type="password"
-              name="password"
-              id="password"
               placeholder="Password"
+              {...login.register('password')}
             />
+            <S.InputError>{login.errors.password?.message || ' '}</S.InputError>
             <div>
               <label>
                 <input
@@ -49,7 +59,9 @@ const Login = () => {
               </label>
               <Link href="/forget-password">Forget password?</Link>
             </div>
-            <button type="submit">Login</button>
+            <button type="submit" disabled={login.isSubmitting}>
+              Login
+            </button>
             <S.LoginRegister>
               Not registered yet? <Link href="register">Create an account</Link>
             </S.LoginRegister>

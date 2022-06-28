@@ -48,10 +48,18 @@ export const LoginForm = styled.form`
       linear-gradient(251.43deg, #fde48c 3.15%, #f14784 97.02%) border-box;
     border-radius: 60px;
     border: 2px solid var(--grayTwo);
-    margin-bottom: 20px;
 
     &:focus {
       border-color: transparent;
+    }
+
+    &.active {
+      border-color: transparent;
+    }
+
+    &:disabled {
+      pointer-events: none;
+      cursor: not-allowed;
     }
 
     &::placeholder {
@@ -144,4 +152,15 @@ export const LoginRegister = styled.p`
     background-clip: text;
     font-weight: 700;
   }
+`
+
+export const InputError = styled.p`
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  min-height: 24px;
+  background: linear-gradient(251.43deg, #482020 3.15%, #a57373 97.02%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 `

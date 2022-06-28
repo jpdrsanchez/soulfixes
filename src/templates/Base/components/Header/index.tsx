@@ -1,11 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { BaseAuthProps } from 'templates/Base'
 
 import Menu from './components/Menu'
 import UserMenu from './components/UserMenu'
 import * as S from './styles'
 
-const Header = () => {
+interface HeaderProps extends BaseAuthProps {}
+
+const Header = (props: HeaderProps) => {
   return (
     <S.Header>
       <S.HeaderContainer>
@@ -22,7 +25,7 @@ const Header = () => {
         </Link>
         <S.HeaderNav>
           <Menu />
-          <UserMenu />
+          <UserMenu user={props.user} />
         </S.HeaderNav>
       </S.HeaderContainer>
     </S.Header>

@@ -1,20 +1,31 @@
 import Link from 'next/link'
 import { IoLogIn, IoChevronDownOutline, IoLanguage } from 'react-icons/io5'
+import { BaseAuthProps } from 'templates/Base'
 
 import LanguageMenu from './components/LanguageMenu'
 import * as S from './styles'
 import useLanguageModal from './useLanguageModal'
 
-const UserMenu = () => {
+interface UserMenuProps extends BaseAuthProps {}
+
+const UserMenu = (props: UserMenuProps) => {
   const languageModal = useLanguageModal()
+
   return (
     <S.Menu>
       <S.MenuLogin>
         <Link href="/login" passHref>
-          <a>
-            <div>
-              <IoLogIn />
-            </div>
+          <a
+            onClick={e => {
+              if (props.user) e.preventDefault()
+            }}
+          >
+            {props.user && <img src={props.user.image} alt={props.user.name} />}
+            {!props.user && (
+              <div>
+                <IoLogIn />
+              </div>
+            )}
             <span>
               <IoChevronDownOutline />
             </span>

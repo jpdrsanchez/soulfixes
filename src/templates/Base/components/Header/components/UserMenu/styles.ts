@@ -9,12 +9,21 @@ export const MenuLogin = styled.li`
   position: relative;
   z-index: 990;
 
-  a {
+  & > a {
     position: relative;
     display: flex;
     align-items: center;
     gap: 9px;
     cursor: pointer;
+
+    img {
+      width: 45px;
+      height: 45px;
+      border: 3px solid var(--grayFour);
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
   }
 
   & > a > div {

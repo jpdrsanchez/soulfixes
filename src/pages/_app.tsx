@@ -12,13 +12,14 @@ import '@fontsource/stix-two-text/600.css'
 import '@fontsource/stix-two-text/700.css'
 
 import { GlobalStyles } from '../styles'
+import { success, error } from 'shared/toast'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <GlobalStyles />
       <Component {...pageProps} />
-      <Toaster />
+      <Toaster toastOptions={{ success, error }} position="top-right" />
     </>
   )
 }
