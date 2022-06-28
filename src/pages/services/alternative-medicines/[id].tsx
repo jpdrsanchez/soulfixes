@@ -5,7 +5,7 @@ import Service from 'templates/Service'
 
 const AlternativeMedicinesServicePage: NextPage = () => {
   return (
-    <Base variant="purple">
+    <Base variant="purple" user={false}>
       <Service />
     </Base>
   )
