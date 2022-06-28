@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import Container from 'components/Container'
 import * as S from './styles'
 
@@ -21,7 +23,7 @@ const Categories = () => {
               quis non eget consequat dui nascetur. Egestas amet diam gravida in
               urna ultricies eget.
             </p>
-            <a href="/services/alternative-medicines">Go to category</a>
+            <Link href="/services/alternative-medicines">Go to category</Link>
           </S.Category>
           <S.Category>
             <div>
@@ -33,7 +35,7 @@ const Categories = () => {
               quis non eget consequat dui nascetur. Egestas amet diam gravida in
               urna ultricies eget.
             </p>
-            <a href="/services/esthetic">Go to category</a>
+            <Link href="/services/esthetic">Go to category</Link>
           </S.Category>
         </S.CategoryList>
       </Container>

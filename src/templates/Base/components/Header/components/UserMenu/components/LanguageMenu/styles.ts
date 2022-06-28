@@ -7,8 +7,8 @@ export const Wrapper = styled.div<Pick<LanguageMenuProps, 'open'>>`
   width: max-content;
   padding-top: 78px;
   top: -10px;
-  transform: translateX(-50%) translateY(-50px);
-  left: 50%;
+  transform: translateY(-50px);
+  right: 0;
   transition: opacity 0.5s, transform 0.3s;
   opacity: 0;
   pointer-events: none;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div<Pick<LanguageMenuProps, 'open'>>`
     css`
       opacity: 1;
       pointer-events: initial;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
     `};
 
   ul {

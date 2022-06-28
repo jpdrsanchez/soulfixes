@@ -39,7 +39,7 @@ export const MenuLogin = styled.li`
   &:hover {
     & > div:first-of-type {
       opacity: 1;
-      transform: translateX(-50%) translateY(0);
+      transform: translateY(0);
       pointer-events: initial;
     }
   }
@@ -51,8 +51,8 @@ export const SubmenuLogin = styled.div`
   width: max-content;
   padding-top: 78px;
   top: -10px;
-  transform: translateX(-50%) translateY(-50px);
-  left: 50%;
+  transform: translateY(-50px);
+  right: 0;
   transition: opacity 0.5s, transform 0.3s;
   opacity: 0;
   pointer-events: none;
