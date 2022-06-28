@@ -28,7 +28,11 @@ const ServiceItem = (props: ServiceItemProps) => {
               <span>
                 <IoCash />
               </span>
-              from {props.data.price}
+              from{' '}
+              {new Intl.NumberFormat('en-US', {
+                style: 'decimal',
+                maximumFractionDigits: 2
+              }).format(Number(props.data.price))}
             </p>
           </div>
         </a>

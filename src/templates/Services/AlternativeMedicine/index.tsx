@@ -1,12 +1,16 @@
 import Breadcrumb from 'components/Breadcrumb'
 import ServicesList from 'components/ServicesList'
+import { ServiceCard } from 'components/ServicesList/interfaces'
 import Image from 'next/image'
-import services from 'shared/mocks/servies'
 import Separator from '../components/Separator'
 import ServicesWrapper from '../components/ServicesWrapper'
 import * as S from './styles'
 
-const AlternativeMedicine = () => {
+interface AlternativeMedicineProps {
+  services: ServiceCard[]
+}
+
+const AlternativeMedicine = (props: AlternativeMedicineProps) => {
   return (
     <>
       <S.Main>
@@ -44,11 +48,13 @@ const AlternativeMedicine = () => {
       <ServicesWrapper>
         <ServicesList
           title="Top Services"
-          items={services.slice(0, 3)}
+          items={props.services
+            .filter(service => service.isTopService)
+            .slice(0, 3)}
           columns={3}
         />
         <Separator />
-        <ServicesList title="Other services" items={services} />
+        <ServicesList title="Other services" items={props.services} />
       </ServicesWrapper>
     </>
   )

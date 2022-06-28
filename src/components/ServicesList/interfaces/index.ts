@@ -5,4 +5,5 @@ export interface ServiceCard {
   categories: string[]
   price: string
   image: string
+  isTopService: boolean
 }

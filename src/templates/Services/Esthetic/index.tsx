@@ -5,9 +5,13 @@ import * as S from './styles'
 import ServicesWrapper from '../components/ServicesWrapper'
 import ServicesList from 'components/ServicesList'
 import Separator from '../components/Separator'
-import services from 'shared/mocks/servies'
+import { ServiceCard } from 'components/ServicesList/interfaces'
 
-const Esthetic = () => {
+interface AlternativeMedicineProps {
+  services: ServiceCard[]
+}
+
+const Esthetic = (props: AlternativeMedicineProps) => {
   return (
     <>
       <S.Main>
@@ -41,14 +45,16 @@ const Esthetic = () => {
       <ServicesWrapper>
         <ServicesList
           title="Top Services"
-          items={services.slice(0, 3)}
+          items={props.services
+            .filter(service => service.isTopService)
+            .slice(0, 3)}
           columns={3}
           variant="orange"
         />
         <Separator />
         <ServicesList
           title="Other services"
-          items={services}
+          items={props.services}
           variant="orange"
         />
       </ServicesWrapper>

@@ -10,7 +10,7 @@ interface HomePageProps extends BaseAuthProps {}
 const HomePage: NextPage<HomePageProps> = props => {
   return (
     <Base user={props.user}>
-      <Home />
+      <Home user={props.user} />
     </Base>
   )
 }

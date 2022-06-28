@@ -2,12 +2,17 @@ import Image from 'next/image'
 
 import Container from 'components/Container'
 import * as S from './styles'
+import { BaseAuthProps } from 'templates/Base'
+import { getFirstName } from 'shared/utils/user'
 
-const Search = () => {
+interface SearchProps extends BaseAuthProps {}
+
+const Search = (props: SearchProps) => {
   return (
     <S.Search>
       <Container>
-        <h2>Hi, Chelsea</h2>
+        {props.user && <h2>Hi, {getFirstName(props.user.name)}</h2>}
+        {!props.user && <h2>Hi</h2>}
         <p>What are you looking for today?</p>
         <form>
           <span>
