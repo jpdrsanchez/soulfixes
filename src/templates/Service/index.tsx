@@ -3,36 +3,51 @@ import { IoBriefcase, IoPeople } from 'react-icons/io5'
 import Breadcrumb from 'components/Breadcrumb'
 import Container from 'components/Container'
 import * as S from './styles'
+import { DtoSingleServiceResponse } from 'services/api/services/dtoGetSingleServiceResponse'
+import { Variant } from 'templates/Base/components/Background/styles'
 
-const Service = () => {
+interface ServiceProps {
+  service: DtoSingleServiceResponse
+  variant: Variant
+  type: 'alternative-medicines' | 'esthetic'
+}
+
+const Service = (props: ServiceProps) => {
   return (
     <S.Main>
       <Container>
         <Breadcrumb
           center
-          variant="purple"
+          variant={props.variant}
           paths={[
             { name: 'Home', link: '/' },
             {
               name: 'Alternative Medicine',
-              link: '/services/alternative-medicines'
+              link: `/services/${props.type}`
             },
-            { name: 'Chiropractic', link: '/services/alternative-medicines/1' }
+            {
+              name: props.service.data.title,
+              link: `/services/${props.type}/${props.service.data.id}`
+            }
           ]}
         />
         <S.ServiceCard>
-          <S.ServiceImage>
-            <img src="/images/Services/service.jpg" alt="Chiropractic" />
+          <S.ServiceImage variant={props.variant}>
+            <img
+              src={props.service.data.image}
+              alt={props.service.data.title}
+            />
           </S.ServiceImage>
-          <S.ServiceContent>
-            <h1>Chiropractic</h1>
+          <S.ServiceContent variant={props.variant}>
+            <h1>{props.service.data.title}</h1>
             <ul>
               <li>
                 <span>
                   <IoPeople />
                 </span>
                 <span>
-                  <strong>Professionals:</strong> 56
+                  <strong>Professionals:</strong>{' '}
+                  {props.service.countProfessionals}
                 </span>
               </li>
               <li>
@@ -41,7 +56,8 @@ const Service = () => {
                 </span>
                 <span>
                   <strong>Attendance type:</strong>
-                  <span>In person</span>
+                  {props.service.data.in_person && <span>In person</span>}
+                  {props.service.data.virtual && <span>Virtual</span>}
                 </span>
               </li>
             </ul>
@@ -50,19 +66,7 @@ const Service = () => {
         </S.ServiceCard>
         <S.ServiceDescription>
           <h2>Service&rsquo;s description</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rutrum in
-            eu volutpat dignissim at. Faucibus ut urna proin amet orci. Vitae
-            aliquam at vitae, ut arcu lectus. Iaculis eget iaculis interdum
-            cursus ut lectus vel fringilla. Purus neque, egestas sollicitudin
-            morbi et quis auctor posuere odio. Cursus amet, quis interdum non,
-            rutrum in ante. Donec leo a tellus, tincidunt ultrices sed ipsum
-            arcu tristique. Eu tellus proin adipiscing nunc in vulputate eget
-            metus viverra. In justo, eget justo, duis amet, feugiat amet. Odio
-            nisl tellus ut dolor leo pharetra urna et. Vitae amet, amet ut
-            augue. Scelerisque nibh donec pharetra, lectus ridiculus condimentum
-            scelerisque quam.
-          </p>
+          <p>{props.service.data.desc}</p>
         </S.ServiceDescription>
       </Container>
     </S.Main>

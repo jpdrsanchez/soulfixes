@@ -1,7 +1,6 @@
 import { ServiceCard } from 'components/ServicesList/interfaces'
 import { GetServerSideProps, NextPage } from 'next'
 import ServicesService from 'services/api/services'
-import { DtoService } from 'services/api/services/dtoGetServicesResponse'
 import Auth from 'shared/auth'
 import Mappers from 'shared/mappers'
 

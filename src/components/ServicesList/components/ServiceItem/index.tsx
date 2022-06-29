@@ -9,12 +9,13 @@ import { Variant } from 'templates/Base/components/Background/styles'
 interface ServiceItemProps {
   data: ServiceCard
   variant?: Variant
+  type: 'alternative-medicines' | 'esthetic'
 }
 
 const ServiceItem = (props: ServiceItemProps) => {
   return (
     <S.Card variant={props.variant}>
-      <Link href={props.data.slug}>
+      <Link href={`${props.type}/${props.data.slug}`}>
         <a>
           <img src={props.data.image} alt={props.data.title} />
           <div>

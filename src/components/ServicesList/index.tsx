@@ -9,6 +9,7 @@ interface ServicesListProps {
   items: ServiceCard[]
   columns?: 3 | 4
   variant?: Variant
+  type: 'alternative-medicines' | 'esthetic'
 }
 
 const ServicesList = (props: ServicesListProps) => {
@@ -18,7 +19,12 @@ const ServicesList = (props: ServicesListProps) => {
         <h2>{props.title}</h2>
         <S.SectionList columns={props.columns}>
           {props.items.map(item => (
-            <ServiceItem key={item.id} data={item} variant={props.variant} />
+            <ServiceItem
+              key={item.id}
+              data={item}
+              variant={props.variant}
+              type={props.type}
+            />
           ))}
         </S.SectionList>
       </Container>

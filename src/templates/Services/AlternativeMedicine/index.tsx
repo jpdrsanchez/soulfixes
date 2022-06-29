@@ -52,9 +52,14 @@ const AlternativeMedicine = (props: AlternativeMedicineProps) => {
             .filter(service => service.isTopService)
             .slice(0, 3)}
           columns={3}
+          type="alternative-medicines"
         />
         <Separator />
-        <ServicesList title="Other services" items={props.services} />
+        <ServicesList
+          title="Other services"
+          items={props.services}
+          type="alternative-medicines"
+        />
       </ServicesWrapper>
     </>
   )

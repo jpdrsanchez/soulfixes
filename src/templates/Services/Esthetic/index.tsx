@@ -50,12 +50,14 @@ const Esthetic = (props: AlternativeMedicineProps) => {
             .slice(0, 3)}
           columns={3}
           variant="orange"
+          type="esthetic"
         />
         <Separator />
         <ServicesList
           title="Other services"
           items={props.services}
           variant="orange"
+          type="esthetic"
         />
       </ServicesWrapper>
     </>

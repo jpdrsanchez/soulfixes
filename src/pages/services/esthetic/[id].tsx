@@ -11,20 +11,14 @@ interface Params extends ParsedUrlQuery {
   id: string
 }
 
-interface AlternativeMedicinesServicePageProps extends BaseAuthProps {
+interface EstheticServicePageProps extends BaseAuthProps {
   service: DtoSingleServiceResponse
 }
 
-const AlternativeMedicinesServicePage: NextPage<
-  AlternativeMedicinesServicePageProps
-> = props => {
+const EstheticServicePage: NextPage<EstheticServicePageProps> = props => {
   return (
-    <Base variant="purple" user={props.user}>
-      <Service
-        service={props.service}
-        variant="purple"
-        type="alternative-medicines"
-      />
+    <Base variant="orange" user={props.user}>
+      <Service service={props.service} variant="orange" type="esthetic" />
     </Base>
   )
 }
@@ -36,7 +30,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   try {
     const service = await ServicesService.getSingle(params.id)
-    if (service.data.type_service !== 1) throw new Error()
+    if (service.data.type_service !== 2) throw new Error()
     return {
       props: {
         user,
@@ -50,4 +44,4 @@ export const getServerSideProps: GetServerSideProps = async context => {
   }
 }
 
-export default AlternativeMedicinesServicePage
+export default EstheticServicePage
