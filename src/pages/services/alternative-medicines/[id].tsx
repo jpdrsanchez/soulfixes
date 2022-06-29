@@ -24,6 +24,7 @@ const AlternativeMedicinesServicePage: NextPage<
         service={props.service}
         variant="purple"
         type="alternative-medicines"
+        user={props.user}
       />
     </Base>
   )

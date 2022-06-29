@@ -18,7 +18,12 @@ interface EstheticServicePageProps extends BaseAuthProps {
 const EstheticServicePage: NextPage<EstheticServicePageProps> = props => {
   return (
     <Base variant="orange" user={props.user}>
-      <Service service={props.service} variant="orange" type="esthetic" />
+      <Service
+        service={props.service}
+        variant="orange"
+        type="esthetic"
+        user={props.user}
+      />
     </Base>
   )
 }

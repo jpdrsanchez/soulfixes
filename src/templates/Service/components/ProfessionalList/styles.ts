@@ -35,3 +35,8 @@ export const ProfessionalHeader = styled.div`
     }
   }
 `
+export const ProfessionalList = styled.ul`
+  display: grid;
+  gap: 30px;
+  padding-bottom: 60px;
+`

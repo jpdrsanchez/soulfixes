@@ -8,11 +8,13 @@ import { Variant } from 'templates/Base/components/Background/styles'
 import FilterForm from 'components/FilterForm'
 import ProfessionalWrapper from './components/ProfessionalWrapper'
 import ProfessionalList from './components/ProfessionalList'
+import { DtoGetUserResponse } from 'services/api/user/dtoGetUserResponse'
 
 interface ServiceProps {
   service: DtoSingleServiceResponse
   variant: Variant
   type: 'alternative-medicines' | 'esthetic'
+  user: false | DtoGetUserResponse
 }
 
 const Service = (props: ServiceProps) => {
@@ -76,8 +78,12 @@ const Service = (props: ServiceProps) => {
       </S.Main>
       <ProfessionalWrapper>
         <h2>Professionals</h2>
-        <FilterForm onSubmit={data => {}} />
-        <ProfessionalList professionals={props.service.data.relations} />
+        <FilterForm onSubmit={data => {}} variant={props.variant} />
+        <ProfessionalList
+          professionals={props.service.data.relations}
+          variant={props.variant}
+          user={props.user}
+        />
       </ProfessionalWrapper>
     </>
   )

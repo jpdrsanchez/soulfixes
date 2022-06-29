@@ -5,9 +5,11 @@ import { Inputs } from './useFilterForm/types'
 import fields from './constants/fields'
 import * as S from './styles'
 import useFilterForm from './useFilterForm'
+import { Variant } from 'templates/Base/components/Background/styles'
 
 interface FilterFormProps {
   onSubmit: (data: Inputs) => void
+  variant: Variant
 }
 
 const FilterForm = (props: FilterFormProps) => {
@@ -55,7 +57,9 @@ const FilterForm = (props: FilterFormProps) => {
           </S.FilterInput>
         )
       })}
-      <S.FilterButton type="submit">Apply Filters</S.FilterButton>
+      <S.FilterButton type="submit" variant={props.variant}>
+        Apply Filters
+      </S.FilterButton>
     </S.FilterForm>
   )
 }

@@ -1,5 +1,16 @@
 import styled from 'styled-components'
 import { opacityTransition } from 'styles/animations'
+import { Variant } from 'templates/Base/components/Background/styles'
+
+interface VariantProps {
+  variant: Variant
+}
+
+const variantStyles: Record<Variant, string> = {
+  white: '',
+  orange: 'linear-gradient(251.43deg, #FDE48C 3.15%, #F14784 97.02%)',
+  purple: 'linear-gradient(251.43deg, #c28cde 3.15%, #884acc 97.02%)'
+}
 
 export const FilterForm = styled.form`
   display: grid;
@@ -61,9 +72,9 @@ export const FilterInput = styled.div`
   }
 `
 
-export const FilterButton = styled.button`
+export const FilterButton = styled.button<VariantProps>`
   cursor: pointer;
-  background: linear-gradient(251.43deg, #c28cde 3.15%, #884acc 97.02%);
+  background: ${props => variantStyles[props.variant]};
   border-radius: 60px;
   display: block;
   padding: 10px;

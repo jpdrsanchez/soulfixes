@@ -3,11 +3,12 @@ import * as S from './styles'
 
 interface FavoriteButtonProps {
   favorited: boolean
+  onClick: () => void
 }
 
 const FavoriteButton = (props: FavoriteButtonProps) => {
   return (
-    <S.Button type="button">
+    <S.Button type="button" onClick={props.onClick}>
       {!props.favorited && (
         <Image
           src="/images/blank-fav.svg"
