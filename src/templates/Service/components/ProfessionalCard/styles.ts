@@ -13,31 +13,69 @@ const variantStyles: Record<Variant, string> = {
 
 export const Card = styled.li`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+
   gap: 30px;
   background: var(--white);
   padding-top: 30px;
   padding-bottom: 40px;
   border-radius: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
+  overflow: auto;
+
+  @media (min-width: 28em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 36em) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+
+  @media (min-width: 62em) {
+    grid-template-columns: 1fr 1fr 2fr;
+  }
+
+  @media (min-width: 75em) {
+    grid-template-columns: repeat(12, 1fr);
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   & > * {
     &:nth-child(1) {
-      padding-left: 30px;
-      grid-column: 1 / 4;
-      grid-row: 1;
+      @media (min-width: 75em) {
+        padding-left: 30px;
+        grid-column: 1 / 4;
+        grid-row: 1;
+      }
     }
 
     &:nth-child(2) {
-      padding-left: 70px;
-      grid-column: 3 / 8;
-      grid-row: 1;
+      @media (min-width: 75em) {
+        padding-left: 70px;
+        grid-column: 3 / 8;
+        grid-row: 1;
+      }
     }
 
     &:nth-child(3) {
-      padding-left: 30px;
-      grid-column: 8 / 13;
-      grid-row: 1;
-      padding-right: 80px;
+      min-width: 360px;
+
+      @media (min-width: 28em) {
+        grid-column: span 2;
+      }
+
+      @media (min-width: 62em) {
+        grid-column: 3;
+      }
+
+      @media (min-width: 75em) {
+        padding-left: 30px;
+        grid-column: 8 / 13;
+        grid-row: 1;
+        padding-right: 80px;
+      }
     }
   }
 `
@@ -56,8 +94,20 @@ export const ProfessionalInfo = styled.div`
 
   button {
     position: absolute;
-    right: 70px;
-    transform: translateY(-50px);
+    transform: translateY(-30px);
+
+    @media (max-width: 61.9375em) {
+      left: 120px;
+    }
+
+    @media (min-width: 62em) {
+      right: 50px;
+    }
+
+    @media (min-width: 75em) {
+      right: 70px;
+      transform: translateY(-50px);
+    }
   }
 
   ul {

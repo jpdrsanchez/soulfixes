@@ -2,10 +2,19 @@ import styled from 'styled-components'
 
 export const ProfessionalHeader = styled.div`
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
   gap: 30px;
   margin-bottom: 30px;
   margin-top: 137px;
+  grid-template-columns: 1fr 1fr 2fr;
+
+  @media (max-width: 61.9375em) {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  @media (min-width: 75em) {
+    grid-template-columns: repeat(12, 1fr);
+  }
 
   h3 {
     color: var(--blackTwo);

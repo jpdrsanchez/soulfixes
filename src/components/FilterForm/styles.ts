@@ -15,9 +15,16 @@ const variantStyles: Record<Variant, string> = {
 export const FilterForm = styled.form`
   display: grid;
   position: relative;
-  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   align-items: center;
+
+  @media (min-width: 36em) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 62em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 `
 
 export const FilterInput = styled.div`
