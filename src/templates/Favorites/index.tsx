@@ -1,5 +1,6 @@
 import Breadcrumb from 'components/Breadcrumb'
 import Container from 'components/Container'
+import FavoriteButton from 'components/FavoriteButton'
 import Image from 'next/image'
 import Link from 'next/link'
 import { IoStar } from 'react-icons/io5'
@@ -26,15 +27,7 @@ const Favorites = () => {
           </S.FavoritesHeader>
           <S.FavoritesItem>
             <S.FavoritesIcon>
-              <button type="button">
-                <Image
-                  src="/images/fill-fav.svg"
-                  alt="Favoritar"
-                  width={34}
-                  height={34}
-                  quality={100}
-                />
-              </button>
+              <FavoriteButton favorited />
             </S.FavoritesIcon>
             <S.FavoritesData>
               <div>

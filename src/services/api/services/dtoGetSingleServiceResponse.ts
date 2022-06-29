@@ -15,9 +15,9 @@ export interface DtoService {
   is_top: boolean
   createdAt: string | null
   updatedAt: string
-  relations?: RelationsEntity[] | null
+  relations?: Relations[] | null
 }
-export interface RelationsEntity {
+export interface Relations {
   id: number
   professional_id: number
   service_id: number
